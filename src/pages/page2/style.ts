@@ -1,5 +1,3 @@
 import styled from 'styled-components';
 
-export const Page2Container = styled.div`
-  
-`;
+export const Page2Container = styled.div``;

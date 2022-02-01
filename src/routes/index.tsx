@@ -5,12 +5,12 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import { Page1, Page2 } from '../pages/index';
+import { Home, Page2 } from '../pages/index';
 
 export const Router = (): React.ReactElement => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Page1 />} />
+      <Route path="/" element={<Home />} />
       <Route path="/Page2" element={<Page2 />} />
     </Routes>
   </BrowserRouter>

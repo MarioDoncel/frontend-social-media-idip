@@ -15,25 +15,41 @@ export const GloblaStyle = createGlobalStyle`
     list-style-type: none;
     box-sizing: border-box;
     outline: none;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif
 }
 body{
     font-size: 1.6rem;
+    color: #FFF;
 }
 
 #root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
+}
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card{
+  background-color: ${({ theme }) => theme.color.dark};
+  border-radius: 10px;
+  padding: 6px;
 }
 
 @media(min-width:600px){
     :root{
-        font-size: 18px;
+        font-size: 16px;
     }
 }
+@keyframes fallDown {
+    from {
+      top: -50px;
+    }
+    from {
+      top: 150px;
+    }
+  }
 
 `;
