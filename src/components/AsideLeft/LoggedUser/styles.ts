@@ -7,4 +7,13 @@ export const LoggedUserContainer = styled.div`
     color: ${({ theme }) => theme.color.grey};
     font-size: 1rem;
   }
+
+  @media (max-width: 500px) {
+    div:first-child {
+      display: none;
+    }
+    img {
+      display: none;
+    }
+  }
 `;

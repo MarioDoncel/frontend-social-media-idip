@@ -60,4 +60,10 @@ export const SignupContainer = styled.div`
       }
     }
   }
+
+  @media (max-width: 500px) {
+    .container {
+      flex-direction: column;
+    }
+  }
 `;

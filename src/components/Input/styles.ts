@@ -21,4 +21,9 @@ export const InputContainer = styled.div`
       filter: invert(1);
     }
   }
+
+  @media (max-width: 500px) {
+    width: 80vw;
+    }
+  }
 `;
