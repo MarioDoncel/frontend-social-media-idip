@@ -22,6 +22,8 @@ export const Home: React.FC = () => {
         <AsideLeft />
         <main>
           <Post />
+          <Post />
+          <Post />
         </main>
       </div>
     </HomeContainer>
