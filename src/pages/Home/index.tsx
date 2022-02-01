@@ -5,6 +5,10 @@ import Header from '../../components/Header';
 import Post from '../../components/Post';
 
 import NewContext from '../../providers/NewContextProvider';
+import Feed from './Feed';
+import Followers from './Followers';
+import Followings from './Followings';
+import Posts from './Posts';
 
 import { HomeContainer } from './style';
 
@@ -21,12 +25,12 @@ export const Home: React.FC = () => {
       <Header />
       <div className="container">
         <AsideLeft />
-        <main>
-          <Routes>
-            <Route path="/" element={<Post />} />
-            <Route path="/followers" element={<Post />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={<Feed />} />
+          <Route path="/followers" element={<Followers />} />
+          <Route path="/followings" element={<Followings />} />
+          <Route path="/posts" element={<Posts />} />
+        </Routes>
       </div>
     </HomeContainer>
   );

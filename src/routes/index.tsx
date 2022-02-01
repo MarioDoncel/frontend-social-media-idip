@@ -12,8 +12,10 @@ export const Router = (): React.ReactElement => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />}>
-        <Route path="/" element={<Post />} />
-        <Route path="followers" element={<Post />} />
+        <Route path="/" />
+        <Route path="followers" />
+        <Route path="followings" />
+        <Route path="posts" />
       </Route>
       <Route path="/signin" element={<Page2 />} />
       <Route path="/signup" element={<Page2 />} />
