@@ -1,13 +1,13 @@
 import React, { createContext, useState } from 'react';
 
 interface IExampleContext{
-    example:string
+  example:string
 }
 
 type PropsUserContext = {
-    user: IExampleContext,
-    setUser: React.Dispatch<React.SetStateAction<IExampleContext>>
-}
+  user: IExampleContext,
+  setUser: React.Dispatch<React.SetStateAction<IExampleContext>>
+};
 const DEFAULT_VALUE = {
   user: {
     example: '',

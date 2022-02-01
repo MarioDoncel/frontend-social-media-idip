@@ -9,7 +9,8 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "airbnb-typescript",
     "airbnb/hooks",
-    "airbnb"
+    "airbnb",
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,9 +19,18 @@
   "plugins": [
     "react",
     "@typescript-eslint",
-    "react-hooks"
+    "react-hooks",
+    "prettier"
   ],
   "rules": {
+    "react/jsx-indent": [
+      2,
+      2,
+      {
+        "checkAttributes": false,
+        "indentLogicalExpressions": false
+      }
+    ],
     "react/function-component-definition": [
       2,
       {
@@ -53,6 +63,12 @@
       "warn",
       {
         "code": 80
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
       }
     ],
     "react-hooks/rules-of-hooks": "error",

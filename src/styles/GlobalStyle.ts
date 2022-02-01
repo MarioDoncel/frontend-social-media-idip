@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 // CSS RESET
 
@@ -36,4 +36,4 @@ body{
     }
 }
 
-`
+`;

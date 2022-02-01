@@ -5,14 +5,14 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     color: {
-      dark: string,
-      black: string,
-      light: string,
-      grey: string,
-      primary: string,
-      secondary: string,
-      success: string,
-      danger: string,
-    }
+      dark: string;
+      black: string;
+      light: string;
+      grey: string;
+      primary: string;
+      secondary: string;
+      success: string;
+      danger: string;
+    };
   }
 }

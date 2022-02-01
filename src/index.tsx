@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { GloblaStyle } from './styles/GlobalStyle';
 
-
 ReactDOM.render(
   <React.StrictMode>
     <GloblaStyle />
@@ -11,4 +10,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-

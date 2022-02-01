@@ -1,13 +1,4 @@
+import React from 'react';
 import { Page2Container } from './style';
 
-
-
-export const Page2 = () => {
-  
-  return (
-    <Page2Container>
-     
-    </Page2Container>
-  );
-}
-
+export const Page2 = () => <Page2Container />;

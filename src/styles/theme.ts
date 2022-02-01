@@ -1,5 +1,4 @@
-import { DefaultTheme } from "styled-components"
-
+import { DefaultTheme } from 'styled-components';
 
 const theme: DefaultTheme = {
   color: {
@@ -11,8 +10,7 @@ const theme: DefaultTheme = {
     secondary: '#d6ccf',
     success: '#51fb51',
     danger: '#fb5151',
-  }
-}
+  },
+};
 
-
-export { theme }
+export { theme };
