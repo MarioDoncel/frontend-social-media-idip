@@ -6,17 +6,15 @@ import { MOCKPOST } from '../../MOCK DATA/post';
 
 import { PostContainer } from './styles';
 import UserInfo from './UserInfo';
+import PostImage from './PostImage';
 
 const Post: React.FC = () => {
   return (
     <PostContainer className="card flex-center">
       <UserInfo user={MOCKUSER} postData={MOCKPOST.createdAt} />
 
-      {MOCKPOST.image && (
-        <div className="postImg">
-          <img src={MOCKPOST.image} alt="postPicture" />
-        </div>
-      )}
+      {MOCKPOST.image && <PostImage src={MOCKPOST.image} />}
+
       <p className="postText">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit,
         optio ipsum amet mollitia vero enim aut in assumenda facilis quas, nisi

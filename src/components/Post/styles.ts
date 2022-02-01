@@ -3,27 +3,7 @@ import styled from 'styled-components';
 export const PostContainer = styled.div`
   flex-direction: column;
   gap: 0.8rem;
-  .userInfo {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 1rem;
-    .info {
-      line-height: 1.4rem;
-      span {
-        font-size: 0.8rem;
-        color: ${({ theme }) => theme.color.grey};
-      }
-    }
-  }
-  .postImg {
-    width: 100%;
-    max-height: 170px;
-    overflow: hidden;
-    img {
-      width: 100%;
-      object-fit: contain;
-    }
-  }
+
   .postText {
     font-size: 1rem;
     text-indent: 1rem;
