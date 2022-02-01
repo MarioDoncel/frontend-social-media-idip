@@ -5,7 +5,7 @@ import { ActionsContainer } from './styles';
 
 const Actions: React.FC = () => {
   return (
-    <ActionsContainer className="flex-center">
+    <ActionsContainer className="flex-center start">
       <div className="likes">
         <FcLike />
         <span>12</span>

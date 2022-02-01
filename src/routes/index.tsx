@@ -5,8 +5,9 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Post from '../components/Post';
-import { Home, Page2 } from '../pages/index';
+
+import { Home, Signup } from '../pages/index';
+import { Signin } from '../pages/Signin';
 
 export const Router = (): React.ReactElement => (
   <BrowserRouter>
@@ -17,8 +18,8 @@ export const Router = (): React.ReactElement => (
         <Route path="followings" />
         <Route path="posts" />
       </Route>
-      <Route path="/signin" element={<Page2 />} />
-      <Route path="/signup" element={<Page2 />} />
+      <Route path="/signin" element={<Signin />} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   </BrowserRouter>
 );

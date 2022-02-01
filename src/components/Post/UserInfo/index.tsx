@@ -12,7 +12,7 @@ interface IUserInfoProps extends HTMLAttributes<HTMLDivElement> {
 
 const UserInfo: React.FC<IUserInfoProps> = ({ user, postData }) => {
   return (
-    <UserInfoContainer className="flex-center">
+    <UserInfoContainer className="flex-center start">
       <UserImage src={user.profileImage} alt={user.firstName} />
       <div className="info">
         <p>

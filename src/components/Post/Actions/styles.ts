@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 export const ActionsContainer = styled.div`
-  justify-content: flex-start;
   width: 100%;
   gap: 1rem;
+  &.start {
+    justify-content: flex-start;
+  }
   div {
     display: flex;
     svg {
