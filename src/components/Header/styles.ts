@@ -44,5 +44,4 @@ export const HeaderContainer = styled.header`
       opacity: 1;
       top: 0;
     } */
-  }
 `;
