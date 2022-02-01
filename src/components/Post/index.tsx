@@ -1,5 +1,4 @@
 import React from 'react';
-import { FcLike, FcLikePlaceholder, FcComments } from 'react-icons/fc';
 
 import { MOCKUSER } from '../../MOCK DATA/user';
 import { MOCKPOST } from '../../MOCK DATA/post';
@@ -7,6 +6,7 @@ import { MOCKPOST } from '../../MOCK DATA/post';
 import { PostContainer } from './styles';
 import UserInfo from './UserInfo';
 import PostImage from './PostImage';
+import Actions from './Actions';
 
 const Post: React.FC = () => {
   return (
@@ -20,16 +20,7 @@ const Post: React.FC = () => {
         optio ipsum amet mollitia vero enim aut in assumenda facilis quas, nisi
         natus sint. Est incidunt dolor accusamus perspiciatis nulla.
       </p>
-      <div className="actions flex-center">
-        <div className="likes">
-          <FcLike />
-          <span>12</span>
-        </div>
-        <div className="comments">
-          <FcComments />
-          <span>5</span>
-        </div>
-      </div>
+      <Actions />
     </PostContainer>
   );
 };
