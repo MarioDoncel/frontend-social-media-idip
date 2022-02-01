@@ -15,7 +15,7 @@ const NavItem: React.FC<INavItem> = ({ to, text, Icon }) => {
       to={to}
       className={({ isActive }) => `flex-center${isActive ? ' onPage' : ''}`}
     >
-      <Icon /> {text}
+      <Icon /> <span>{text}</span>
     </NavLink>
   );
 };

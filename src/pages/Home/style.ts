@@ -12,18 +12,6 @@ export const HomeContainer = styled.div`
     display: flex;
     gap: 1rem;
     padding-top: 1rem;
-    aside {
-      height: 100%;
-      width: 25vw;
-      .profile {
-        gap: 8px;
-        line-height: 1.4rem;
-        span {
-          color: ${({ theme }) => theme.color.grey};
-          font-size: 1rem;
-        }
-      }
-    }
     main {
       flex: 1;
     }

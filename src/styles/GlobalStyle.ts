@@ -35,7 +35,7 @@ body{
 .card{
   background-color: ${({ theme }) => theme.color.dark};
   border-radius: 10px;
-  padding: 6px;
+  padding: 10px;
 }
 
 @media(min-width:600px){

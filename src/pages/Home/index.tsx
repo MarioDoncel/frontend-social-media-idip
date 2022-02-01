@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { MdOutlineRssFeed } from 'react-icons/md';
 import AsideLeft from '../../components/AsideLeft';
 import Header from '../../components/Header';
-import NewComponent from '../../components/NewComponent';
+import Post from '../../components/Post';
 import UserImage from '../../components/UserImage';
+
 import NewContext from '../../providers/NewContextProvider';
 import { HomeContainer } from './style';
 
@@ -21,9 +21,7 @@ export const Home: React.FC = () => {
       <div className="container">
         <AsideLeft />
         <main>
-          <div className="post card">
-            <p>POST</p>
-          </div>
+          <Post />
         </main>
       </div>
     </HomeContainer>
