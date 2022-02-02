@@ -27,7 +27,7 @@ const CreatePost: React.FC = () => {
         ) : (
           ''
         )}
-        <Textarea text="text" maxLength={500} />
+        <Textarea text="Text" maxLength={500} />
 
         <SubmitInput value="Send" />
       </form>

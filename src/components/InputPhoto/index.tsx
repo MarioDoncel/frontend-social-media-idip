@@ -16,7 +16,7 @@ const InputPhoto: React.FC<HTMLAttributes<HTMLDivElement>> = ({ onChange }) => {
       <Button
         bgColor={theme.color.black}
         color={theme.color.light}
-        text="Escolher imagem"
+        text="Choose picture"
         type="button"
       />
     </InputPhotoContainer>
