@@ -9,9 +9,20 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   bgColor?: string;
 }
 
-const Button: React.FC<IButtonProps> = ({ type, text, color, bgColor }) => {
+const Button: React.FC<IButtonProps> = ({
+  type,
+  text,
+  color,
+  bgColor,
+  onClick,
+}) => {
   return (
-    <ButtonContainer bgColor={bgColor} color={color} type={type}>
+    <ButtonContainer
+      bgColor={bgColor}
+      color={color}
+      type={type}
+      onClick={onClick}
+    >
       {text}
     </ButtonContainer>
   );

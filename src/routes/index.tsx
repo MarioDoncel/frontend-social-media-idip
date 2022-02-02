@@ -5,6 +5,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import CreatePost from '../pages/Home/CreatePost';
 import Feed from '../pages/Home/Feed';
 import Followers from '../pages/Home/Followers';
 import Followings from '../pages/Home/Followings';
@@ -26,6 +27,7 @@ export const Router = (): React.ReactElement => (
         <Route path="theme" element={<Posts />} />
         <Route path="settings" element={<Settings />} />
         <Route path="searchResults" element={<SearchResults />} />
+        <Route path="createpost" element={<CreatePost />} />
       </Route>
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />
