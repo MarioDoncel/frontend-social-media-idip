@@ -36,6 +36,20 @@ export const SignupContainer = styled.div`
     form {
       flex-direction: column;
       gap: 0.5rem;
+      .profileImage {
+        gap: 2rem;
+      }
+      .photoPreview {
+        width: 60px;
+        height: 60px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+          object-fit: cover;
+        }
+      }
       p {
         font-size: 1rem;
         span {

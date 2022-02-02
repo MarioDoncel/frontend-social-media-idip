@@ -6,4 +6,13 @@ export const AsideLeftContainer = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  button {
+    font-weight: bolder;
+    transition: 400ms;
+    :hover {
+      letter-spacing: 3px;
+      background-color: ${({ theme }) => theme.color.primary};
+      color: ${({ theme }) => theme.color.light};
+    }
+  }
 `;

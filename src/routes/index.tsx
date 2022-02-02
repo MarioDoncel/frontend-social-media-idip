@@ -9,6 +9,7 @@ import Feed from '../pages/Home/Feed';
 import Followers from '../pages/Home/Followers';
 import Followings from '../pages/Home/Followings';
 import Posts from '../pages/Home/Posts';
+import SearchResults from '../pages/Home/SearchResults';
 import Settings from '../pages/Home/Settings';
 
 import { Home, Signup } from '../pages/index';
@@ -24,6 +25,7 @@ export const Router = (): React.ReactElement => (
         <Route path="posts" element={<Posts />} />
         <Route path="theme" element={<Posts />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="searchResults" element={<SearchResults />} />
       </Route>
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />

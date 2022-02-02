@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { InputHTMLAttributes } from 'react';
 
+// eslint-disable-next-line import/no-cycle
 import { InputContainer } from './styles';
 
 export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {

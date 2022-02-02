@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FollowersContainer = styled.main`
-  .follower {
+  .card {
     justify-content: space-between;
     .user {
       gap: 1rem;

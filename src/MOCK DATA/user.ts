@@ -7,7 +7,7 @@ export const MOCKUSER = {
   email: 'marianafanaro02@gmail.com',
   emailVerified: false,
   password: '$2b$10$XeyB5RVqDKoXrHGZXOa7gOppbDXfhj076IQySo94BAeDqyozi0BtC',
-  profileImage: 'https://via.placeholder.com/150',
+  profileImage: 'https://github.com/MarioDoncel.png',
   followings: [],
   followers: [],
   postsTenLast: [],

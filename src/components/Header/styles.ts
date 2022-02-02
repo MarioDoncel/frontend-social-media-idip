@@ -7,18 +7,15 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5%;
-  gap: 6px;
+  gap: 1rem;
   max-width: 100%;
   top: 0;
   height: 80px;
-  /* &.fixed {
-    width: 100vw;
-    position: fixed;
-    animation: falldown 400ms linear;
-  } */
+
   h5 {
     max-width: 25vw;
     text-align: center;
+    animation: pulsate 1s infinite;
   }
   .searchInput {
     background-color: ${({ theme }) => theme.color.black};
@@ -35,13 +32,15 @@ export const HeaderContainer = styled.header`
       color: #fff;
     }
   }
-  /* @keyframes falldown {
-    from {
-      opacity: 0;
-      top: -50px;
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
     }
-    to {
-      opacity: 1;
-      top: 0;
-    } */
+    50% {
+      transform: scale(1.04);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 `;

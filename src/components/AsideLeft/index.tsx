@@ -1,4 +1,6 @@
 import React from 'react';
+import { theme } from '../../styles/theme';
+import Button from '../Button';
 
 import LoggedUser from './LoggedUser';
 import Navbar from './Navbar';
@@ -10,6 +12,12 @@ const AsideLeft: React.FC = () => {
     <AsideLeftContainer>
       <LoggedUser />
       <Navbar />
+      <Button
+        type="button"
+        text="+ POST"
+        color={theme.color.primary}
+        bgColor={theme.color.light}
+      />
     </AsideLeftContainer>
   );
 };

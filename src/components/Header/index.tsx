@@ -1,11 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { KeyboardEvent, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
+import { useNavigate } from 'react-router';
 import UserImage from '../UserImage';
 
 import { HeaderContainer } from './styles';
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
   const [scroll, setScroll] = useState(false);
+  const handleSearchEnter = (event: KeyboardEvent) => {
+    const inputSearch = event.target as HTMLInputElement;
+    if (event.key === 'Enter' || event.key === '13') {
+      navigate('/searchResults', {
+        state: inputSearch.value,
+      });
+    }
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       setScroll(window.scrollY > 100);
@@ -17,7 +28,7 @@ const Header: React.FC = () => {
       <h5>Motivate Social</h5>
       <div className="searchInput">
         <FiSearch />
-        <input type="text" />
+        <input type="text" onKeyUp={handleSearchEnter} />
       </div>
       <UserImage src="https://github.com/MarioDoncel.png" alt="ProfileImage" />
     </HeaderContainer>
