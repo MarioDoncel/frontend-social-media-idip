@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Outlet, Route, Routes } from 'react-router-dom';
 import AsideLeft from '../../components/AsideLeft';
 import Header from '../../components/Header';
 import Post from '../../components/Post';
@@ -26,14 +26,7 @@ export const Home: React.FC = () => {
       <Header />
       <div className="container">
         <AsideLeft />
-        <Routes>
-          <Route path="/" element={<Feed />} />
-          <Route path="/followers" element={<Followers />} />
-          <Route path="/followings" element={<Followings />} />
-          <Route path="/posts" element={<Posts />} />
-          <Route path="/theme" element={<Posts />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
+        <Outlet />
       </div>
     </HomeContainer>
   );

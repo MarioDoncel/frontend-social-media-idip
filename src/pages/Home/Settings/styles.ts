@@ -4,6 +4,8 @@ export const SettingsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  height: 100%;
+  width: 100%;
   form {
     flex-direction: column;
     gap: 0.5rem;
