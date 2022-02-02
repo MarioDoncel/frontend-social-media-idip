@@ -49,4 +49,16 @@ export const SettingsContainer = styled.main`
       }
     }
   }
+
+  @media (max-width: 500px) {
+    .highRiskOptions {
+      flex-direction: column;
+      gap: 2rem;
+      button {
+        :hover {
+          transform: scale(1.03);
+        }
+      }
+    }
+  }
 `;

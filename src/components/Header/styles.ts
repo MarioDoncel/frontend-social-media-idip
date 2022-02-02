@@ -37,6 +37,13 @@ export const HeaderContainer = styled.header`
       animation: 400ms ease vibrate;
     }
   }
+
+  @media (max-width: 350px) {
+    .userImage {
+      display: none;
+    }
+  }
+
   @keyframes pulsate {
     0% {
       transform: scale(1);

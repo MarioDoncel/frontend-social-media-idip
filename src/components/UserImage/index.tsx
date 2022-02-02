@@ -7,7 +7,7 @@ const UserImage: React.FC<ImgHTMLAttributes<HTMLImageElement>> = ({
   alt,
 }) => {
   return (
-    <UserImageContainer>
+    <UserImageContainer className="userImage">
       <img src={src} alt={alt} />
     </UserImageContainer>
   );
