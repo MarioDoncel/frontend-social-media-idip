@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-export const SettingsContainer = styled.div`
+export const SettingsContainer = styled.main`
   display: flex;
   flex-direction: column;
   gap: 2rem;
   height: 100%;
-  width: 100%;
   form {
     flex-direction: column;
     gap: 0.5rem;
