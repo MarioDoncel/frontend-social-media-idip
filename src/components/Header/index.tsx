@@ -21,6 +21,9 @@ const Header: React.FC = () => {
   const handleLogout = () => {
     navigate('/signin');
   };
+  const handleClickUser = () => {
+    navigate('/profile/123');
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -36,7 +39,11 @@ const Header: React.FC = () => {
         <input type="text" onKeyUp={handleSearchEnter} />
       </div>
       <Button color={theme.color.danger} text="Logout" onClick={handleLogout} />
-      <UserImage src="https://github.com/MarioDoncel.png" alt="ProfileImage" />
+      <UserImage
+        src="https://github.com/MarioDoncel.png"
+        alt="ProfileImage"
+        onClick={handleClickUser}
+      />
     </HeaderContainer>
   );
 };
