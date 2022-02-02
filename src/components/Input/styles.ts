@@ -1,6 +1,9 @@
-import styled from 'styled-components';
+/* eslint-disable prettier/prettier */
+import styled, { css } from 'styled-components';
+// eslint-disable-next-line import/no-cycle
+import { IInputProps } from '.';
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.div<IInputProps>`
   display: flex;
   flex-direction: column;
   width: 50vw;
@@ -8,6 +11,8 @@ export const InputContainer = styled.div`
 
   input {
     background-color: ${({ theme }) => theme.color.dark};
+    background-color: ${(props) => props.secondaryBg ? props.theme.color.black :
+    ''};
     color: #fff;
     padding: 6px 8px;
     border-radius: 10px;
@@ -24,6 +29,5 @@ export const InputContainer = styled.div`
 
   @media (max-width: 500px) {
     width: 80vw;
-    }
   }
 `;

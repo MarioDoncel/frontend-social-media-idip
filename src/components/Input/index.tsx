@@ -3,13 +3,14 @@ import React, { InputHTMLAttributes } from 'react';
 
 import { InputContainer } from './styles';
 
-interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string;
+export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
+  secondaryBg?: boolean;
 }
 
-const Input: React.FC<IInputProps> = ({ name, type, label }) => {
+const Input: React.FC<IInputProps> = ({ name, type, label, secondaryBg }) => {
   return (
-    <InputContainer>
+    <InputContainer secondaryBg={secondaryBg}>
       <label htmlFor={name}>{label}</label>
       <input name={name} type={type} />
     </InputContainer>

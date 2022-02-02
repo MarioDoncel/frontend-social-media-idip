@@ -17,6 +17,8 @@ export const Router = (): React.ReactElement => (
         <Route path="followers" />
         <Route path="followings" />
         <Route path="posts" />
+        <Route path="theme" />
+        <Route path="settings" />
       </Route>
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />

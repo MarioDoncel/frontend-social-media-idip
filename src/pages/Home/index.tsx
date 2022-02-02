@@ -9,6 +9,7 @@ import Feed from './Feed';
 import Followers from './Followers';
 import Followings from './Followings';
 import Posts from './Posts';
+import Settings from './Settings';
 
 import { HomeContainer } from './style';
 
@@ -30,6 +31,8 @@ export const Home: React.FC = () => {
           <Route path="/followers" element={<Followers />} />
           <Route path="/followings" element={<Followings />} />
           <Route path="/posts" element={<Posts />} />
+          <Route path="/theme" element={<Posts />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </div>
     </HomeContainer>
