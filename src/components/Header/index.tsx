@@ -18,6 +18,9 @@ const Header: React.FC = () => {
       });
     }
   };
+  const handleLogout = () => {
+    navigate('/signin');
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -32,7 +35,7 @@ const Header: React.FC = () => {
         <FiSearch />
         <input type="text" onKeyUp={handleSearchEnter} />
       </div>
-      <Button color={theme.color.danger} text="Logout" />
+      <Button color={theme.color.danger} text="Logout" onClick={handleLogout} />
       <UserImage src="https://github.com/MarioDoncel.png" alt="ProfileImage" />
     </HeaderContainer>
   );
