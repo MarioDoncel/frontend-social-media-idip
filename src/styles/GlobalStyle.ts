@@ -37,19 +37,28 @@ body{
   border-radius: 10px;
   padding: 10px;
 }
+@media(min-width:250px){
+  :root{
+    font-size: 9px;
+  }
+}
+@media(min-width:350px){
+  :root{
+    font-size: 11px;
+  }
+}
+
+@media(min-width:400px){
+  :root{
+    font-size: 13px;
+  }
+}
+
+
 
 @media(min-width:600px){
     :root{
         font-size: 16px;
     }
 }
-@keyframes fallDown {
-    from {
-      top: -50px;
-    }
-    from {
-      top: 150px;
-    }
-  }
-
 `;

@@ -36,6 +36,7 @@ export const SigninContainer = styled.div`
     form {
       flex-direction: column;
       gap: 0.5rem;
+      width: 100%;
       p {
         font-size: 1rem;
         span {

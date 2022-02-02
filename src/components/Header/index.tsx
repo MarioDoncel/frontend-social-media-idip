@@ -1,6 +1,8 @@
 import React, { KeyboardEvent, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { useNavigate } from 'react-router';
+import { theme } from '../../styles/theme';
+import Button from '../Button';
 import UserImage from '../UserImage';
 
 import { HeaderContainer } from './styles';
@@ -30,6 +32,7 @@ const Header: React.FC = () => {
         <FiSearch />
         <input type="text" onKeyUp={handleSearchEnter} />
       </div>
+      <Button color={theme.color.danger} text="Logout" />
       <UserImage src="https://github.com/MarioDoncel.png" alt="ProfileImage" />
     </HeaderContainer>
   );

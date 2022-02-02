@@ -32,6 +32,11 @@ export const HeaderContainer = styled.header`
       color: #fff;
     }
   }
+  button {
+    :hover {
+      animation: 400ms ease vibrate;
+    }
+  }
   @keyframes pulsate {
     0% {
       transform: scale(1);
@@ -41,6 +46,27 @@ export const HeaderContainer = styled.header`
     }
     100% {
       transform: scale(1);
+    }
+  }
+
+  @keyframes vibrate {
+    0% {
+      transform: rotate(8deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    40% {
+      transform: rotate(8deg);
+    }
+    60% {
+      transform: rotate(-8deg);
+    }
+    80% {
+      transform: rotate(8deg);
+    }
+    100% {
+      transform: rotate(0deg);
     }
   }
 `;

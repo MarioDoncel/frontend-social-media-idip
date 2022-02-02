@@ -36,6 +36,7 @@ export const SignupContainer = styled.div`
     form {
       flex-direction: column;
       gap: 0.5rem;
+      width: 100%;
       .profileImage {
         gap: 2rem;
       }
@@ -63,6 +64,9 @@ export const SignupContainer = styled.div`
   @media (max-width: 500px) {
     .container {
       flex-direction: column;
+      form {
+        margin-bottom: 2rem;
+      }
     }
   }
 `;

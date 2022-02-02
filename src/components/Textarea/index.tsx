@@ -10,9 +10,9 @@ interface ITextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 const Textarea: React.FC<ITextareaProps> = ({ text, maxLength }) => {
   return (
     <TextareaContainer>
-      <h5>Text</h5>
+      <h5>{text}</h5>
       <textarea
-        name={text}
+        name="text"
         maxLength={500}
         id="text"
         cols={30}

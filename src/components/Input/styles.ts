@@ -28,6 +28,9 @@ export const InputContainer = styled.div<IInputProps>`
   }
 
   @media (max-width: 500px) {
-    width: 80vw;
+    width: 80%;
+    input{
+      font-size: 1rem;
+    }
   }
 `;

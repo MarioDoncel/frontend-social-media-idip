@@ -14,14 +14,15 @@ export const ProfileContainer = styled.main`
         display: flex;
         align-items: center;
         p {
-          font-size: 2.5rem;
+          font-size: 1.8rem;
           color: ${({ theme }) => theme.color.grey};
           flex-basis: 500px;
         }
         span {
           font-size: 1.2rem;
 
-          color: ${({ theme }) => theme.color.primary};
+          color: ${({ theme }) => theme.color.secondary};
+          font-weight: bold;
           flex-basis: 500px;
         }
       }

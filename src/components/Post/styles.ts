@@ -8,4 +8,8 @@ export const PostContainer = styled.div`
     font-size: 1rem;
     text-indent: 1rem;
   }
+  form {
+    flex-direction: column;
+    width: 100%;
+  }
 `;

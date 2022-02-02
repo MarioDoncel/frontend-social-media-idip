@@ -1,4 +1,5 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, KeyboardEvent } from 'react';
+import { useNavigate } from 'react-router';
 import { IUser } from '../../interfaces/User';
 import { theme } from '../../styles/theme';
 import Button from '../Button';
@@ -9,12 +10,32 @@ import { UserListCardContainer } from './styles';
 interface IUserListCardProps extends HTMLAttributes<HTMLDivElement> {
   user: IUser;
   following?: boolean;
+  index?: number;
 }
 
-const UserListCard: React.FC<IUserListCardProps> = ({ user, following }) => {
+const UserListCard: React.FC<IUserListCardProps> = ({
+  user,
+  following,
+  index,
+}) => {
+  const navigate = useNavigate();
+  const handleClickUser = () => {
+    navigate('/profile/12');
+  };
+  const handlePressEnter = (event: KeyboardEvent) => {
+    if (event.key === 'Enter' || event.key === '13') {
+      navigate('/profile/12');
+    }
+  };
   return (
     <UserListCardContainer className="flex-center card">
-      <div className="user flex-center">
+      <div
+        className="user flex-center"
+        role="button"
+        onClick={handleClickUser}
+        onKeyDown={handlePressEnter}
+        tabIndex={index}
+      >
         <UserImage src={user.profileImage} alt="ProfileImage" />
         <div className="text">
           <p>
