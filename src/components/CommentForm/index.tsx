@@ -8,7 +8,9 @@ import { CommentFormContainer } from './styles';
 
 interface ICommentFormProps extends FormHTMLAttributes<HTMLFormElement> {
   postId: string | undefined;
-  commentCreated: () => void;
+  commentCreated: (
+    comments: { text: string; userId: string; _id: string }[]
+  ) => void;
 }
 
 const CommentForm: React.FC<ICommentFormProps> = ({
@@ -20,10 +22,14 @@ const CommentForm: React.FC<ICommentFormProps> = ({
     const form = e.target as HTMLFormElement;
     const text = form.text.value;
     try {
-      if (postId) await api.post(`posts/${postId}/comment`, { text });
+      if (!postId) return;
+      const comments: { text: string; userId: string; _id: string }[] =
+        await api
+          .post(`posts/${postId}/comment`, { text })
+          .then((res) => res.data);
       form.text.value = '';
 
-      commentCreated();
+      commentCreated(comments.reverse());
     } catch (error) {
       console.error(error);
     }

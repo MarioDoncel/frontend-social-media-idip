@@ -18,8 +18,6 @@ import { IPost } from '../../interfaces/Post';
 import { IUser } from '../../interfaces/User';
 import { popSuccess } from '../../utils/popSuccess';
 import Toastify from '../Toastify';
-import { Tstate } from '../../pages/Signin';
-import { popError } from '../../utils/popError';
 
 interface IPostProps extends HTMLAttributes<HTMLDivElement> {
   post?: IPost;
@@ -28,12 +26,14 @@ interface IPostProps extends HTMLAttributes<HTMLDivElement> {
 
 const Post: React.FC<IPostProps> = ({ post, setReRender }) => {
   const [showComments, setShowComments] = useState(false);
+  const [comments, setComments] = useState(post?.comments || []);
   const [user, setUser] = useState<IUser>();
-  const handleClickComments = () => {
-    setShowComments(!showComments);
-  };
-  const commentCreated = async () => {
+
+  const commentCreated = async (newComments: {
+    text: string; userId: string; _id: string
+  }[]) => {
     setShowComments(false)
+    setComments(newComments)
     popSuccess('Comment Posted');
     if (setReRender) setReRender(prev => !prev)
   }
@@ -62,11 +62,15 @@ const Post: React.FC<IPostProps> = ({ post, setReRender }) => {
           <PostImage src={post.image} />
 
           <p className="postText">{post && post.text}</p>
-          <Actions onClickComments={handleClickComments} post={post} />
+          <Actions comments={comments}
+            setShowComments={setShowComments}
+            post={post} />
+
           {showComments && <CommentForm postId={post._id}
             commentCreated={commentCreated} />}
+
           {showComments
-            ? post.comments?.map((comment) => {
+            ? comments.map((comment) => {
               return <CommentCard key={comment._id} comment={comment} />
             })
             : ''}
