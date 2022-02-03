@@ -1,5 +1,7 @@
 import React from 'react';
+import { shallowEqual } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { useAppSelector } from '../../hooks/redux.hooks';
 import { theme } from '../../styles/theme';
 import Button from '../Button';
 
@@ -10,9 +12,9 @@ import { AsideLeftContainer } from './styles';
 
 const AsideLeft: React.FC = () => {
   const navigate = useNavigate();
-
+  const { user } = useAppSelector((state) => state.currentUser, shallowEqual);
+  console.log(user);
   const handleClickCreatePost = () => {
-    console.log('hi');
     navigate('/createpost');
   };
   return (

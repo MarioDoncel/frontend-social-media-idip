@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const NavbarContainer = styled.div`
   &.paddingZero {
     padding: 0;
+    overflow: hidden;
   }
   a {
     justify-content: flex-start;

@@ -1,7 +1,9 @@
+import { IUser } from '../interfaces/User';
 import { api } from '../services/api';
 
 export const isAuth = async () => {
-  const user = await api.get('users/isauth', { withCredentials: true });
-  if (user) return user;
+  const response = await api.get('users/isauth', { withCredentials: true });
+
+  if (response) return response.data;
   return false;
 };
