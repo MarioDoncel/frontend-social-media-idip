@@ -16,6 +16,7 @@ export const HeaderContainer = styled.header`
     max-width: 25vw;
     text-align: center;
     animation: pulsate 1s infinite;
+    cursor: pointer;
   }
   .searchInput {
     background-color: ${({ theme }) => theme.color.black};
@@ -36,6 +37,9 @@ export const HeaderContainer = styled.header`
     :hover {
       animation: 400ms ease vibrate;
     }
+  }
+  img {
+    cursor: pointer;
   }
 
   @media (max-width: 350px) {

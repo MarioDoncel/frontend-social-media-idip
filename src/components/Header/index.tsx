@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { KeyboardEvent, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { useNavigate } from 'react-router';
@@ -21,6 +23,9 @@ const Header: React.FC = () => {
   const handleLogout = () => {
     navigate('/signin');
   };
+  const handleClickLogo = () => {
+    navigate('/');
+  };
   const handleClickUser = () => {
     navigate('/profile/123');
   };
@@ -33,7 +38,7 @@ const Header: React.FC = () => {
 
   return (
     <HeaderContainer className={scroll ? 'fixed' : ''}>
-      <h5>Motivate Social</h5>
+      <h5 onClick={handleClickLogo}>Motivate Social</h5>
       <div className="searchInput">
         <FiSearch />
         <input type="text" onKeyUp={handleSearchEnter} />

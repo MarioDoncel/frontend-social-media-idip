@@ -16,11 +16,19 @@ import Settings from '../pages/Home/Settings';
 
 import { Home, Signup } from '../pages/index';
 import { Signin } from '../pages/Signin';
+import { PrivateRoute } from './PrivateRoute';
 
 export const Router = (): React.ReactElement => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />}>
+      <Route
+        path="/"
+        element={
+          <PrivateRoute>
+            <Home />
+          </PrivateRoute>
+        }
+      >
         <Route path="/" element={<Feed />} />
         <Route path="followers" element={<Followers />} />
         <Route path="followings" element={<Followings />} />
