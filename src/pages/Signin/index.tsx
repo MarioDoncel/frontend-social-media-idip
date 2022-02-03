@@ -10,7 +10,7 @@ import Toastify from '../../components/Toastify';
 import { popSuccess } from '../../utils/popSuccess';
 import { loginUser } from './utils/loginUser';
 
-type Tstate = { status: string; message: string };
+export type Tstate = { status: string; message: string };
 
 export const Signin = () => {
   const navigate = useNavigate();

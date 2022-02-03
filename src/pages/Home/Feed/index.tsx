@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import React, { useLayoutEffect, useState } from 'react';
 import Post from '../../../components/Post';
@@ -6,6 +7,7 @@ import { api } from '../../../services/api';
 import { FeedContainer } from './styles';
 
 const Feed: React.FC = () => {
+  const [reRender, setReRender] = useState(false);
   const [posts, setPosts] = useState<IPost[]>([]);
 
   useLayoutEffect(() => {
@@ -15,7 +17,8 @@ const Feed: React.FC = () => {
           .get('/posts')
           .then((res) => res.data);
         if (postsData.length > 5) {
-          setPosts(postsData.slice(postsData.length - 5, postsData.length));
+          setPosts(postsData.slice(postsData.length - 5, postsData.length)
+            .reverse());
         } else {
           setPosts(postsData);
         }
@@ -23,11 +26,17 @@ const Feed: React.FC = () => {
         console.error(error);
       }
     })();
-  }, []);
+  }, [reRender]);
   return (
     <FeedContainer>
       {posts
-        ? posts.map((post) => <Post key={post._id} post={post && post} />)
+        ? posts.map((post) => (
+          <Post
+            key={post._id}
+            post={post && post}
+            setReRender={setReRender}
+          />
+        ))
         : ''}
     </FeedContainer>
   );

@@ -7,6 +7,7 @@ export const PostContainer = styled.div`
   .postText {
     font-size: 1rem;
     text-indent: 1rem;
+    width: 100%;
   }
   form {
     flex-direction: column;
