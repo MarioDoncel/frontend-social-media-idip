@@ -7,7 +7,7 @@ import { UserInfoContainer } from './styles';
 
 interface IUserInfoProps extends HTMLAttributes<HTMLDivElement> {
   user: IUser;
-  postData: string;
+  postData: Date | string;
 }
 
 const UserInfo: React.FC<IUserInfoProps> = ({ user, postData }) => {

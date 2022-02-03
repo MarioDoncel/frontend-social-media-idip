@@ -2,7 +2,9 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { KeyboardEvent, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
+import { shallowEqual } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { useAppSelector } from '../../hooks/redux.hooks';
 import { theme } from '../../styles/theme';
 import Button from '../Button';
 import UserImage from '../UserImage';
@@ -12,6 +14,8 @@ import { HeaderContainer } from './styles';
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const [scroll, setScroll] = useState(false);
+  const { user } = useAppSelector((state) => state.currentUser, shallowEqual);
+
   const handleSearchEnter = (event: KeyboardEvent) => {
     const inputSearch = event.target as HTMLInputElement;
     if (event.key === 'Enter' || event.key === '13') {
@@ -20,6 +24,7 @@ const Header: React.FC = () => {
       });
     }
   };
+
   const handleLogout = () => {
     navigate('/signin');
   };
@@ -27,7 +32,7 @@ const Header: React.FC = () => {
     navigate('/');
   };
   const handleClickUser = () => {
-    navigate('/profile/123');
+    navigate(`/profile/${user.id as string}`);
   };
 
   useEffect(() => {
@@ -45,7 +50,7 @@ const Header: React.FC = () => {
       </div>
       <Button color={theme.color.danger} text="Logout" onClick={handleLogout} />
       <UserImage
-        src="https://github.com/MarioDoncel.png"
+        src={user.profileImage}
         alt="ProfileImage"
         onClick={handleClickUser}
       />

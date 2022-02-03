@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 export const CommentCardContainer = styled.div`
   display: flex;
-  flex-basis: 150px;
   gap: 5%;
   background-color: ${({ theme }) => theme.color.black};
   padding: 10px;
   border-radius: 10px;
+  width: 100%;
+
   > div {
-    flex-basis: 15%;
+    width: clamp(50px, 20%, 40vw);
+    height: 100%;
   }
   p {
     flex-basis: 80%;

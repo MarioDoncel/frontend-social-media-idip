@@ -2,16 +2,16 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
 import React, { useLayoutEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import Loading from '../components/Loading';
+import { useAppDispatch } from '../store';
 import { logUser } from '../store/user.store';
 import { isAuth } from '../utils/isAuth';
 
 export const PrivateRoute = ({ children }: any) => {
   const [auth, setAuth] = useState(false);
   const [loading, setLoading] = useState(true);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useLayoutEffect(() => {
     (async () => {

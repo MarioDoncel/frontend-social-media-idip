@@ -14,7 +14,7 @@ const months = [
   'December',
 ];
 
-export const formatDateToPost = (data: string) => {
+export const formatDateToPost = (data: string | Date) => {
   const dataObj = new Date(data);
   const year = dataObj.getFullYear();
   const monthIndex = dataObj.getMonth();
