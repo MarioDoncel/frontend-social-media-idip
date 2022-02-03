@@ -1,15 +1,17 @@
 import React, { FormEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Input from '../../components/Input';
 import InputPhoto from '../../components/InputPhoto';
 import LogoDescription from '../../components/LogoDescription';
 import SubmitInput from '../../components/SubmitInput';
+import Toastify from '../../components/Toastify';
 import { setPreviewImage } from '../../utils/setPreviewImage';
-
 import { SignupContainer } from './style';
+import { createUser } from './utils/createUser';
 
 export const Signup = () => {
+  const navigate = useNavigate();
   const [photo, setPhoto] = useState('https://via.placeholder.com/150');
   const handleAvatarChange = (event: FormEvent) => {
     const inputFile = event.target as HTMLInputElement;
@@ -18,11 +20,22 @@ export const Signup = () => {
       setPreviewImage(files, setPhoto);
     }
   };
+  const handleSubmitSignUp = async (e: FormEvent) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    await createUser(form, navigate);
+  };
   return (
     <SignupContainer className="flex-center">
+      <Toastify />
       <div className="container flex-center">
         <LogoDescription />
-        <form action="" method="post" className="flex-center">
+        <form
+          action=""
+          method="post"
+          className="flex-center"
+          onSubmit={(e) => handleSubmitSignUp(e)}
+        >
           <h1>SignUp.</h1>
           <p>
             Already a member?{' '}

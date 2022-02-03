@@ -7,12 +7,7 @@ import { InputPhotoContainer } from './styles';
 const InputPhoto: React.FC<HTMLAttributes<HTMLDivElement>> = ({ onChange }) => {
   return (
     <InputPhotoContainer>
-      <input
-        type="file"
-        accept="image/"
-        name="profileImage"
-        onChange={onChange}
-      />
+      <input type="file" accept="image/" name="file" onChange={onChange} />
       <Button
         bgColor={theme.color.black}
         color={theme.color.light}

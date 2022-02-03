@@ -28,5 +28,14 @@ export const PrivateRoute = ({ children }: any) => {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   // eslint-disable-next-line no-nested-ternary
-  return loading ? <Loading /> : auth ? children : <Navigate to="/signin" />;
+  return loading ? (
+    <Loading />
+  ) : auth ? (
+    children
+  ) : (
+    <Navigate
+      to="/signin"
+      state={{ status: 'error', message: 'Please Login' }}
+    />
+  );
 };

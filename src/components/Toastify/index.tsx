@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import { ErrorContainer } from './styles';
 
-const Error: React.FC = () => {
+const Toastify: React.FC = () => {
   return (
     <ToastContainer
       position="top-center"
@@ -20,4 +20,4 @@ const Error: React.FC = () => {
   );
 };
 
-export default Error;
+export default Toastify;

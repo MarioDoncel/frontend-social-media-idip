@@ -1,43 +1,37 @@
-import React, { FormEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import Error from '../../components/Error';
+import React, { FormEvent, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import Input from '../../components/Input';
 import LogoDescription from '../../components/LogoDescription';
 import SubmitInput from '../../components/SubmitInput';
-import { api } from '../../services/api';
 import { popError } from '../../utils/popError';
 import { SigninContainer } from './style';
+import Toastify from '../../components/Toastify';
+import { popSuccess } from '../../utils/popSuccess';
+import { loginUser } from './utils/loginUser';
+
+type Tstate = { status: string; message: string };
 
 export const Signin = () => {
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   const handleSubmitLogIn = async (e: FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const email: string = form.email.value;
-    const password = form.password.value;
-    if (!email || !password) {
-      return popError('Fill all fields');
-    }
-    try {
-      const user = await api.get('users/login', {
-        auth: {
-          username: email,
-          password,
-        },
-      });
-      navigate('/');
-    } catch (error: any) {
-      console.error(error);
-      // popAlert('error', error.response.data.message);
-    }
+    await loginUser(form, navigate);
   };
+  useEffect(() => {
+    if ((state as Tstate).status === 'error') {
+      popError((state as Tstate).message);
+    } else {
+      popSuccess((state as Tstate).message);
+    }
+  }, [state]);
 
   return (
     <SigninContainer className="flex-center">
-      <Error />
+      <Toastify />
       <div className="container flex-center">
         <LogoDescription />
         <form
