@@ -13,13 +13,12 @@ import { AsideLeftContainer } from './styles';
 const AsideLeft: React.FC = () => {
   const navigate = useNavigate();
   const { user } = useAppSelector((state) => state.currentUser, shallowEqual);
-  console.log(user);
   const handleClickCreatePost = () => {
     navigate('/createpost');
   };
   return (
     <AsideLeftContainer>
-      <LoggedUser />
+      <LoggedUser user={user} />
       <Navbar />
       <Button
         type="button"
