@@ -10,6 +10,7 @@ import { api } from '../../../services/api';
 import { SearchResultsContainer } from './styles';
 
 const SearchResults: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const { state: filter } = useLocation();
   const [users, setUsers] = useState<IUser[]>();
   const { user: currentUser } = useAppSelector(
@@ -31,8 +32,10 @@ const SearchResults: React.FC = () => {
                 new RegExp(filter as string, 'i').test(user.lastName)
             )
           );
+          setLoading(false);
         } else {
           setUsers(usersFetch);
+          setLoading(true);
         }
       } catch (error) {
         console.error(error);
@@ -41,14 +44,14 @@ const SearchResults: React.FC = () => {
   }, [filter]);
   return (
     <SearchResultsContainer>
-      {users && users[0] ? (
-        users.map((user: IUser) => {
+      {loading ? (
+        <Loading />
+      ) : (
+        users?.map((user: IUser) => {
           if (!user._id) return '';
           if (user._id === currentUser.id) return '';
           return <UserListCard userId={user._id} key={user._id} />;
         })
-      ) : (
-        <Loading />
       )}
     </SearchResultsContainer>
   );

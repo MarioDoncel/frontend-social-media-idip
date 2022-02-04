@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { KeyboardEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { shallowEqual } from 'react-redux';
 import { useNavigate } from 'react-router';
@@ -24,6 +24,13 @@ const Header: React.FC = () => {
         state: inputSearch.value,
       });
     }
+  };
+  const handleChangeInputSearch = (event: ChangeEvent) => {
+    const inputSearch = event.target as HTMLInputElement;
+    if (inputSearch.value.length > 2)
+      navigate('/searchResults', {
+        state: inputSearch.value,
+      });
   };
 
   const handleLogout = async () => {
@@ -50,7 +57,11 @@ const Header: React.FC = () => {
       <h5 onClick={handleClickLogo}>Motivate Social</h5>
       <div className="searchInput">
         <FiSearch />
-        <input type="text" onKeyUp={handleSearchEnter} />
+        <input
+          type="text"
+          onKeyUp={handleSearchEnter}
+          onChange={handleChangeInputSearch}
+        />
       </div>
       <Button color={theme.color.danger} text="Logout" onClick={handleLogout} />
       <UserImage

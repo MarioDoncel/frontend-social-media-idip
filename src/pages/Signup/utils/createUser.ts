@@ -25,7 +25,7 @@ export const createUser = async (
     return popError('Fill all fields');
   }
   const formData = new FormData();
-  formData.append('file', file, file.name);
+  if (file) formData.append('file', file, file.name);
   formData.append('email', email);
   formData.append('firstName', firstName);
   formData.append('lastName', lastName);
