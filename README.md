@@ -217,8 +217,33 @@ Finished.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### BaseURL - http://localhost:3000
+### BaseURL Development - http://localhost:3000
+### Production - https://compassionate-villani-aebf9a.netlify.app/
 
+
+## SignIn // SignUp
+<img src="assets/Signin.png" alt="Logo" width="150px">
+<img src="assets/Signup.png" alt="Logo" width="150px">
+
+## Feed // Comment
+<img src="assets/Feed.png" alt="Logo" width="150px">
+<img src="assets/Comment.png" alt="Logo" width="150px">
+
+## Followers // Followings
+<img src="assets/Followers.png" alt="Logo" width="150px">
+<img src="assets/Followings.png" alt="Logo" width="150px">
+
+## Posts // Settings
+<img src="assets/Posts.png" alt="Logo" width="150px">
+<img src="assets/Settings.png" alt="Logo" width="150px">
+
+## Password // Delete Account
+<img src="assets/Password.png" alt="Logo" width="150px">
+<img src="assets/DeleteAcc.png" alt="Logo" width="150px">
+
+## Profile // Search Results
+<img src="assets/Profile.png" alt="Logo" width="150px">
+<img src="assets/SearchRes.png" alt="Logo" width="150px">
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
