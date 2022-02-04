@@ -35,7 +35,7 @@ const SearchResults: React.FC = () => {
           setLoading(false);
         } else {
           setUsers(usersFetch);
-          setLoading(true);
+          setLoading(false);
         }
       } catch (error) {
         console.error(error);
