@@ -225,6 +225,9 @@ Finished.
 <img src="assets/Signin.png" alt="Logo" width="150px">
 <img src="assets/Signup.png" alt="Logo" width="150px">
 
+## Email validation (Used before Sendgrid closes my account due to many email sent on the free plan)
+<img src="assets/Email.png" alt="Logo" width="150px">
+
 ## Feed // Comment
 <img src="assets/Feed.png" alt="Logo" width="150px">
 <img src="assets/Comment.png" alt="Logo" width="150px">
