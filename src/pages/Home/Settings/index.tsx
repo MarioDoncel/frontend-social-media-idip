@@ -6,7 +6,8 @@ import Input from '../../../components/Input';
 import InputPhoto from '../../../components/InputPhoto';
 import ModalChangePassword from '../../../components/ModalChangePassword';
 import ModalDeleteUser from '../../../components/ModalDeleteUser';
-import { useAppSelector } from '../../../hooks/redux.hooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hooks';
+
 import { theme } from '../../../styles/theme';
 import { formatDateToForm } from '../../../utils/formatDateToForm';
 import { setPreviewImage } from '../../../utils/setPreviewImage';
@@ -15,6 +16,7 @@ import { SettingsContainer } from './styles';
 import { updateUser } from './utils/updateUser';
 
 const Settings: React.FC = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalPasswordIsOpen, setModalPasswordIsOpen] = useState(false);
@@ -30,7 +32,7 @@ const Settings: React.FC = () => {
   const handleSubmitUpdate = async (e: FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    await updateUser(form, user, navigate);
+    await updateUser(form, user, navigate, dispatch);
   };
   const handleDeleteUserClick = () => {
     setModalIsOpen(true);

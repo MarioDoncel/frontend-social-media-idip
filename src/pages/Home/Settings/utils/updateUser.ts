@@ -1,13 +1,18 @@
 /* eslint-disable prettier/prettier */
+import { AnyAction } from '@reduxjs/toolkit';
+import { Dispatch } from 'react';
 import { NavigateFunction } from 'react-router';
 import { IUser } from '../../../../interfaces/User';
 import { api } from '../../../../services/api';
+import { logUser } from '../../../../store/user.store';
 import { popError } from '../../../../utils/popError';
+import { updateUserState } from '../../../../utils/updateUserState';
 
 export const updateUser = async (
   form: HTMLFormElement,
   user: Partial<IUser>,
-  navigate: NavigateFunction
+  navigate: NavigateFunction,
+  dispatch: Dispatch<AnyAction>
 ) => {
   const file: File = form.file.files[0];
   const firstName: string = form.firstName.value;
@@ -34,10 +39,11 @@ export const updateUser = async (
   formData.append('dateOfBirth', dateOfBirth);
   formData.append('telephone', telephone);
   try {
-    const updatedUser = await api
+    const updatedUser: IUser = await api
       .patch('users/', formData)
       .then((res) => res.data);
     if (!updatedUser) return popError('Error on creating user');
+    dispatch(logUser({ ...updatedUser, id: updatedUser._id }))
     return navigate('/', {
       state: {
         status: 'success',
