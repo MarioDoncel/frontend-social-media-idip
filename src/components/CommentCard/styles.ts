@@ -16,4 +16,20 @@ export const CommentCardContainer = styled.div`
     flex-basis: 80%;
     font-size: 1rem;
   }
+  .info {
+    flex-direction: column;
+    .userName {
+      display: block;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: center;
+    }
+  }
+  .text {
+    width: 100%;
+    .date {
+      font-size: 9px;
+      color: ${({ theme }) => theme.color.grey};
+    }
+  }
 `;

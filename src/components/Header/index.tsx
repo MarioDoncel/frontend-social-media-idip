@@ -5,6 +5,7 @@ import { FiSearch } from 'react-icons/fi';
 import { shallowEqual } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useAppSelector } from '../../hooks/redux.hooks';
+import { api } from '../../services/api';
 import { theme } from '../../styles/theme';
 import Button from '../Button';
 import UserImage from '../UserImage';
@@ -25,8 +26,11 @@ const Header: React.FC = () => {
     }
   };
 
-  const handleLogout = () => {
-    navigate('/signin');
+  const handleLogout = async () => {
+    await api.delete('users/logout');
+    navigate('/signin', {
+      state: { status: 'error', message: 'User logged out' },
+    });
   };
   const handleClickLogo = () => {
     navigate('/');

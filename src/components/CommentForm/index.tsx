@@ -9,7 +9,7 @@ import { CommentFormContainer } from './styles';
 interface ICommentFormProps extends FormHTMLAttributes<HTMLFormElement> {
   postId: string | undefined;
   commentCreated: (
-    comments: { text: string; userId: string; _id: string }[]
+    comments: { text: string; userId: string; _id: string; createdAt: string }[]
   ) => void;
 }
 
@@ -23,10 +23,14 @@ const CommentForm: React.FC<ICommentFormProps> = ({
     const text = form.text.value;
     try {
       if (!postId) return;
-      const comments: { text: string; userId: string; _id: string }[] =
-        await api
-          .post(`posts/${postId}/comment`, { text })
-          .then((res) => res.data);
+      const comments: {
+        text: string;
+        userId: string;
+        _id: string;
+        createdAt: string;
+      }[] = await api
+        .post(`posts/${postId}/comment`, { text })
+        .then((res) => res.data);
       form.text.value = '';
 
       commentCreated(comments.reverse());

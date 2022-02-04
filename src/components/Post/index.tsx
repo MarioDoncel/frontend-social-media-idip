@@ -29,7 +29,7 @@ const Post: React.FC<IPostProps> = ({ post }) => {
   const [user, setUser] = useState<IUser>();
 
   const commentCreated = async (newComments: {
-    text: string; userId: string; _id: string
+    text: string; userId: string; _id: string; createdAt: string
   }[]) => {
     setShowComments(false)
     setComments(newComments)

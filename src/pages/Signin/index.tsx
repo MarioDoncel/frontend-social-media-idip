@@ -22,6 +22,7 @@ export const Signin = () => {
     await loginUser(form, navigate);
   };
   useEffect(() => {
+    if (!state) return;
     if ((state as Tstate).status === 'error') {
       popError((state as Tstate).message);
     } else {

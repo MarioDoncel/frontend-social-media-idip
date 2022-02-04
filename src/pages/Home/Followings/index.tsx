@@ -11,11 +11,7 @@ const Followings: React.FC = () => {
     <FollowingsContainer>
       {user.followings && user.followings[0] ? (
         user.followings?.map((userId) => (
-          <UserListCard
-            following={user.followings?.includes(userId)}
-            userId={userId}
-            key={userId}
-          />
+          <UserListCard userId={userId} key={userId} />
         ))
       ) : (
         <h2>No Followings</h2>

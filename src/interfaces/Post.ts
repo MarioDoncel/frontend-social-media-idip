@@ -3,7 +3,7 @@ export interface IPost {
   userId: string;
   text: string;
   image?: string;
-  comments?: { text: string; userId: string; _id: string }[];
+  comments?: { text: string; userId: string; _id: string; createdAt: string }[];
   likes?: string[];
   createdAt?: Date;
   updatedAt?: Date;

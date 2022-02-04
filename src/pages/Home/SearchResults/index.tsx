@@ -45,13 +45,7 @@ const SearchResults: React.FC = () => {
         users.map((user: IUser) => {
           if (!user._id) return '';
           if (user._id === currentUser.id) return '';
-          return (
-            <UserListCard
-              following={currentUser.followings?.includes(user._id)}
-              userId={user._id}
-              key={user._id}
-            />
-          );
+          return <UserListCard userId={user._id} key={user._id} />;
         })
       ) : (
         <Loading />

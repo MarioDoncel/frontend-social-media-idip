@@ -1,9 +1,12 @@
+/* eslint-disable prettier/prettier */
 import { NavigateFunction } from 'react-router';
-import { api } from '../../../services/api';
-import { popError } from '../../../utils/popError';
+import { IUser } from '../../../../interfaces/User';
+import { api } from '../../../../services/api';
+import { popError } from '../../../../utils/popError';
 
-export const createUser = async (
+export const updateUser = async (
   form: HTMLFormElement,
+  user: Partial<IUser>,
   navigate: NavigateFunction
 ) => {
   const file: File = form.file.files[0];
@@ -12,11 +15,10 @@ export const createUser = async (
   const dateOfBirth: string = form.dateOfBirth.value;
   const telephone: string = form.telephone.value;
   const email: string = form.email.value;
-  const password: string = form.password.value;
+
 
   if (
     !email ||
-    !password ||
     !firstName ||
     !lastName ||
     !dateOfBirth ||
@@ -25,20 +27,24 @@ export const createUser = async (
     return popError('Fill all fields');
   }
   const formData = new FormData();
-  formData.append('file', file, file.name);
+  if (file) formData.append('file', file, file.name);
   formData.append('email', email);
   formData.append('firstName', firstName);
   formData.append('lastName', lastName);
   formData.append('dateOfBirth', dateOfBirth);
   formData.append('telephone', telephone);
-  formData.append('password', password);
   try {
-    const user = await api.post('users/', formData).then((res) => res.data);
-    if (!user) return popError('Error on creating user');
-    return navigate('/signin', {
+    const updatedUser = await api
+      .patch('users/', formData)
+      .then((res) => res.data);
+    if (!updatedUser) return popError('Error on creating user');
+    return navigate('/', {
       state: {
         status: 'success',
-        message: 'User Created. Verify your email to confirm your account.',
+        message: `User Updated.${email !== user.email
+          ? 'Please check your email to confirm the new email'
+          : ''
+          }`,
       },
     });
   } catch (error: any) {

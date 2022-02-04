@@ -19,7 +19,7 @@ const Input: React.FC<IInputProps> = ({
   return (
     <InputContainer secondaryBg={secondaryBg}>
       <label htmlFor={name}>{label}</label>
-      <input name={name} type={type} value={value} />
+      <input name={name} type={type} defaultValue={value} />
     </InputContainer>
   );
 };

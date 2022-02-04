@@ -7,6 +7,7 @@ import Loading from '../components/Loading';
 import { useAppDispatch } from '../store';
 import { logUser } from '../store/user.store';
 import { isAuth } from '../utils/isAuth';
+import { updateUserState } from '../utils/updateUserState';
 
 export const PrivateRoute = ({ children }: any) => {
   const [auth, setAuth] = useState(false);
@@ -18,33 +19,9 @@ export const PrivateRoute = ({ children }: any) => {
       try {
         const user = await isAuth();
         if (user) {
-          const {
-            _id: id,
-            firstName,
-            lastName,
-            dateOfBirth,
-            telephone,
-            email,
-            profileImage,
-            followings,
-            followers,
-          } = user;
-
+          updateUserState(user, dispatch);
           setAuth(true);
           setLoading(false);
-          dispatch(
-            logUser({
-              id,
-              firstName,
-              lastName,
-              dateOfBirth,
-              telephone,
-              email,
-              profileImage,
-              followings,
-              followers,
-            })
-          );
         }
       } catch (error) {
         setLoading(false);
