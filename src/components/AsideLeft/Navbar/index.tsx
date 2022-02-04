@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
       <NavItem to="/followers" text="Followers" Icon={GiShadowFollower} />
       <NavItem to="/followings" text="Followings" Icon={RiUserFollowLine} />
       <NavItem to="/posts" text="Posts" Icon={BsFilePost} />
-      <NavItem to="/theme" text="Theme" Icon={IoColorPaletteOutline} />
+      {/* <NavItem to="/theme" text="Theme" Icon={IoColorPaletteOutline} /> */}
       <NavItem to="/settings" text="Settings" Icon={FiSettings} />
     </NavbarContainer>
   );

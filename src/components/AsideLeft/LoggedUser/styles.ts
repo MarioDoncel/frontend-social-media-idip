@@ -15,5 +15,8 @@ export const LoggedUserContainer = styled.div`
     img {
       display: none;
     }
+    p {
+      font-size: 1.5rem;
+    }
   }
 `;

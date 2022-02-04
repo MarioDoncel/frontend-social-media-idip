@@ -10,4 +10,7 @@ export const PostImageContainer = styled.div`
     width: 100%;
     object-fit: contain;
   }
+  @media (min-width: 700px) {
+    max-height: 400px;
+  } ;
 `;
