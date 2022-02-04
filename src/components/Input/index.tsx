@@ -9,11 +9,17 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   secondaryBg?: boolean;
 }
 
-const Input: React.FC<IInputProps> = ({ name, type, label, secondaryBg }) => {
+const Input: React.FC<IInputProps> = ({
+  name,
+  type,
+  label,
+  secondaryBg,
+  value,
+}) => {
   return (
     <InputContainer secondaryBg={secondaryBg}>
       <label htmlFor={name}>{label}</label>
-      <input name={name} type={type} />
+      <input name={name} type={type} value={value} />
     </InputContainer>
   );
 };

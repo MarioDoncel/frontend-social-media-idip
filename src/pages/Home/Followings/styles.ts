@@ -12,4 +12,7 @@ export const FollowingsContainer = styled.main`
       }
     }
   }
+  h2 {
+    text-align: center;
+  }
 `;

@@ -37,7 +37,7 @@ export const Router = (): React.ReactElement => (
         <Route path="settings" element={<Settings />} />
         <Route path="searchResults" element={<SearchResults />} />
         <Route path="createpost" element={<CreatePost />} />
-        <Route path="profile/:userid" element={<Profile />} />
+        <Route path="profile/:userId" element={<Profile />} />
       </Route>
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />

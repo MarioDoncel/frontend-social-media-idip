@@ -12,4 +12,7 @@ export const FollowersContainer = styled.main`
       }
     }
   }
+  h2 {
+    text-align: center;
+  }
 `;

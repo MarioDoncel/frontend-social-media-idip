@@ -1,15 +1,26 @@
 import React from 'react';
+import { shallowEqual } from 'react-redux';
 import UserListCard from '../../../components/UserListCard';
-import { MOCKUSER } from '../../../MOCK DATA/user';
+import { useAppSelector } from '../../../hooks/redux.hooks';
 
 import { FollowersContainer } from './styles';
 
 const Followers: React.FC = () => {
+  const { user } = useAppSelector((state) => state.currentUser, shallowEqual);
+
   return (
     <FollowersContainer>
-      <UserListCard following user={MOCKUSER} />
-      <UserListCard user={MOCKUSER} />
-      <UserListCard following user={MOCKUSER} />
+      {user.followers && user.followers[0] ? (
+        user.followers?.map((userId) => (
+          <UserListCard
+            following={user.followings?.includes(userId)}
+            userId={userId}
+            key={userId}
+          />
+        ))
+      ) : (
+        <h2>No Followers</h2>
+      )}
     </FollowersContainer>
   );
 };

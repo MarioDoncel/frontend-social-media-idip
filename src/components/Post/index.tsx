@@ -21,10 +21,9 @@ import Toastify from '../Toastify';
 
 interface IPostProps extends HTMLAttributes<HTMLDivElement> {
   post?: IPost;
-  setReRender?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Post: React.FC<IPostProps> = ({ post, setReRender }) => {
+const Post: React.FC<IPostProps> = ({ post }) => {
   const [showComments, setShowComments] = useState(false);
   const [comments, setComments] = useState(post?.comments || []);
   const [user, setUser] = useState<IUser>();
@@ -35,7 +34,6 @@ const Post: React.FC<IPostProps> = ({ post, setReRender }) => {
     setShowComments(false)
     setComments(newComments)
     popSuccess('Comment Posted');
-    if (setReRender) setReRender(prev => !prev)
   }
   useLayoutEffect(() => {
     if (!post) return

@@ -7,7 +7,6 @@ import { api } from '../../../services/api';
 import { FeedContainer } from './styles';
 
 const Feed: React.FC = () => {
-  const [reRender, setReRender] = useState(false);
   const [posts, setPosts] = useState<IPost[]>([]);
 
   useLayoutEffect(() => {
@@ -26,7 +25,7 @@ const Feed: React.FC = () => {
         console.error(error);
       }
     })();
-  }, [reRender]);
+  }, []);
   return (
     <FeedContainer>
       {posts
@@ -34,7 +33,6 @@ const Feed: React.FC = () => {
           <Post
             key={post._id}
             post={post && post}
-            setReRender={setReRender}
           />
         ))
         : ''}
