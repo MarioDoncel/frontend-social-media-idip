@@ -28,4 +28,9 @@ export const NavbarContainer = styled.div`
       }
     }
   }
+  @media (max-width: 350px) {
+    a {
+      gap: 0.3rem;
+    }
+  }
 `;

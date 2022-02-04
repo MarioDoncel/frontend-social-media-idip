@@ -17,6 +17,6 @@ export const formatDateOfBirth = (data: string) => {
   const dataObj = new Date(data);
   const year = dataObj.getFullYear();
   const monthIndex = dataObj.getMonth();
-  const day = dataObj.getDate();
+  const day = dataObj.getUTCDate();
   return `${months[monthIndex]}, ${day < 10 ? `0${day}` : day}, ${year}`;
 };
